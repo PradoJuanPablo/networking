@@ -91,12 +91,22 @@ Now that we finished subnetting, we can begin configuring the devices.
 <br />
 
 <h2>Device Configuration</h2>
+<h3>Configuring VLANs</h3>
+<p>
+<img width="500" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/db31d47a-8f5c-4e1e-9e6d-9408b1297cf0">
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Now we need to configure each VLAN and group the ports to correspond to wach VLAN. To do this we enter the switch and enter global configuration mode (conf t) and enter:
+  
+- <b>interface range fa0/2-4</b>:
+    This command means we are entering interface configuration mode and we want to configure the settings for ports fa0/2, fa0/3, fa0/4
+- <b>switchport mode access</b>:
+    This command tells the switch that the interface will be connected to a device like a computer or printer. The switch will add information to the data going through that port to make sure it goes to the right place on the network
+- <b>switchport access vlan 10</b>:
+    This command sets up the interface to connect devices to VLAN 10. So any traffic that comes through this interface will be associated with VLAN 10.
+- <b>do wr</b>: short for "write memory" is used to save the configuration settings of the device even if it is restarted.
+
+  The same commands are applied to the other VLANs with their corresponding interfaces
 </p>
 <br />
 
