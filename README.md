@@ -128,11 +128,45 @@ To configure the access point we click on the access point > "Config" tab >  Por
 </p>
 <br />
 
+<h3>Configuring Trunk Port</h3>
+
+<p>
+<img width="500" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/d05b114f-fe61-442c-9108-2e67048fdedb">
+
+</p>
+<p>
+Since the router has one connection to the switch and the switch has multiple VLANs within it, that interface must be able to allow passage of multiple VLANs. To do that we need to make that interface a trunk port, which allows traffic from multiple VLANs. To configure that we need to find out which interface leads to the router. By hovering over the cable we can see that the interface we are looking for is fa0/1 on the switch. So we enter the swicth and enter: 
+  
+- <b>int fa0/1</b>: This is the port we are entering configuration in 
+- <b>switchport mode trunk</b>: This command instructs the interface to allow passage of multiple VLAN traffic
+- <b>do wr</b>: This command saves the configuration settings
+  
+</p>
+<br />
+
+<h3>Opening Router Port</h3>
+
+<p>
+<img width="500" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/0694524f-926c-46ab-a2b8-0750c51203bd">
+
+</p>
+<p>
+By default, port gig0/0 on the router is closed and we must open it to allow traffic to pass. To do that we enter the CLI and enter:
+
+- <b>int gig0/0</b>: This is the port we are entering configuration in 
+- <b>no shut</b>: This command opens the port
+- <b>do wr</b>: This command saves the configuration settings
+  
+</p>
+<br />
+
+<h3>Configuring DHCP</h3>
+
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Now the devices connected to the network must be able to obtain IP addresses automatically, to do that we must configure Dynamic Host Configuration Protocol(DHCP) which is repsonsible for automatic IP assignment. 
 </p>
 <br />
 
