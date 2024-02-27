@@ -73,25 +73,17 @@ Now lets allocate IPs to each department:
 
 
 Next we need to find the Broadcast ID. The Broadcast IP will be the last IP before moving onto the next subnet.
-- One Router and Swicth
-- 3 departments (Admin/It, Finance/HR, Customer Service/Reception)
-- Host devices and Wireless Access Points
--1st Subnet Broadcast ID: 192.168.1.63
 
--2nd Subnet Broadcast ID: 192.168.1.127
+- 1st Subnet Broadcast ID: 192.168.1.63
+- 2nd Subnet Broadcast ID: 192.168.1.127
+- 3rd Subnet Broadcast ID: 192.168.1.191
 
--3rd Subnet Broadcast ID: 192.168.1.191
 
 Lastly, lets from the range of avaliable Host IDs. Which are the IPs that will be given to the host devices. These IPs are between the network ID and broadcast ID.
-- One Router and Swicth
-- 3 departments (Admin/It, Finance/HR, Customer Service/Reception)
-- Host devices and Wireless Access Points
--1st Subnet Host Range: 192.168.1.1 - 192.168.1.62
 
--2nd Subnet Host Range: 192.168.1.65 - 192.168.1.126
-
--3rd Subnet Host Range: 192.168.1.129 - 192.168.1.190
-
+- 1st Subnet Host Range: 192.168.1.1 - 192.168.1.62
+- 2nd Subnet Host Range: 192.168.1.65 - 192.168.1.126
+- 3rd Subnet Host Range: 192.168.1.129 - 192.168.1.190
 
 
 Now that we finished subnetting, we can begin configuring the devices. 
