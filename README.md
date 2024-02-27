@@ -64,14 +64,18 @@ Now we find the block size. We can see that when an subnet mask ends with 192, t
 
 Now lets allocate IPs to each department:
 
--The 1st Subnet will have a Network ID of: 192.168.1.0
+- The 1st Subnet will have a Network ID of: 192.168.1.0
+- The 2nd Subnet will have a Network ID of: 192.168.1 64
+- The 3rd Subnet will have a Network ID of: 192.168.1.128
 
--The 2nd Subnet will have a Network ID of: 192.168.1 64
 
--The 3rd Subnet will have a Network ID of: 192.168.1.128
+
+
 
 Next we need to find the Broadcast ID. The Broadcast IP will be the last IP before moving onto the next subnet.
-
+- One Router and Swicth
+- 3 departments (Admin/It, Finance/HR, Customer Service/Reception)
+- Host devices and Wireless Access Points
 -1st Subnet Broadcast ID: 192.168.1.63
 
 -2nd Subnet Broadcast ID: 192.168.1.127
@@ -79,7 +83,9 @@ Next we need to find the Broadcast ID. The Broadcast IP will be the last IP befo
 -3rd Subnet Broadcast ID: 192.168.1.191
 
 Lastly, lets from the range of avaliable Host IDs. Which are the IPs that will be given to the host devices. These IPs are between the network ID and broadcast ID.
-
+- One Router and Swicth
+- 3 departments (Admin/It, Finance/HR, Customer Service/Reception)
+- Host devices and Wireless Access Points
 -1st Subnet Host Range: 192.168.1.1 - 192.168.1.62
 
 -2nd Subnet Host Range: 192.168.1.65 - 192.168.1.126
