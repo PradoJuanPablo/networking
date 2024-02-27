@@ -144,7 +144,7 @@ Since the router has one connection to the switch and the switch has multiple VL
 </p>
 <br />
 
-<h3>Opening Router Port</h3>
+<h3>Opening Router Interface</h3>
 
 <p>
 <img width="500" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/0694524f-926c-46ab-a2b8-0750c51203bd">
@@ -159,6 +159,34 @@ By default, port gig0/0 on the router is closed and we must open it to allow tra
   
 </p>
 <br />
+
+<h3>Inter VLAN Routing</h3>
+
+<p>
+<img width="500" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/163960b0-217b-4000-a238-96de57faa71f">
+
+</p>
+<p>
+We will now create multiple sub interfaces from a single phyical interface and assign them an IP address that will act as the default gateway to its respective VLAN. To do that we get into tge router and type:
+
+VLAN 10:
+- <b>int gig0/0.10</b>: This command specifies a subinterface on gig0/0 
+- <b>encapsulation dot1Q 10</b>: This command tells the device to add a tag to the data it sends and recieves on this interface to know which VLAN the data belongs to. 
+- <b>ip address 192.168.1.1 255.255.255.192</b>: This command assigns the an IP to the subinterface. The IP we use is the first usable IP in the host range. This IP will act as the default gateway for the subnet. All the subnets will have the same Subnet Mask. 
+
+VLAN 20
+- <b>int gig0/0.20</b>: 
+- <b>encapsulation dot1Q 20</b>: 
+- <b>ip address 192.168.1.65 255.255.255.192</b>: 
+
+
+VLAN 30
+- <b>int gig0/0.30</b>: 
+- <b>encapsulation dot1Q 30</b>: 
+- <b>ip address 192.168.1.129 255.255.255.192</b>: 
+  
+<br />
+
 
 <h3>Configuring DHCP</h3>
 
