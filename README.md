@@ -110,11 +110,21 @@ Now we need to configure each VLAN and group the ports to correspond to wach VLA
 </p>
 <br />
 
+<h3>Configuring Wireless Access Points</h3>
+
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="500" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/34eb20d8-9c7d-4c86-8491-cc23add9c08c">
+
+
+<img width="500" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/5dc56dae-efbd-4938-aa74-740fd19808d7">
+
+<img width="500" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/f86ae909-6c51-48a8-bd4e-e8914ee2ba02">
+
+
+
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+To configure the access point we click on the access point > "Config" tab >  Port 1 > and set the SSID to the appropriate department > Select WPA2-PSK and set the password
 </p>
 <br />
 
