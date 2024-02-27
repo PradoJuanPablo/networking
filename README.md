@@ -3,7 +3,7 @@
 
 </p>
 
-<h1>Work in Progress</h1>
+<h1>Cisco Networking</h1>
 In this tutorial, we're going to create a Small Office Home Office (SOHO) network in Cisco Packet Tracer. <br />
 
 
@@ -38,14 +38,61 @@ We connect all devices to the switch using a Copper Straight-Through cable
   
 </p>
 <br />
-
+<h3>Subnetting</h3>
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="537" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/9af36709-3023-4284-864e-560c8c5ec2d1">
+
+  
+<img width="450" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/611e44a8-2c31-486c-9aab-5c65958f1c35">
+
+<img width="295" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/b82c691b-4fe8-4399-b470-a0a777e89279">
+
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+We are given an IP address of 192.168.1.0 that will be our base network. From that we need to create 3 subnets for each of the departments. 
+
+The formual to find the number of subnets is: 2^n (n is the number of borrowed network bits)
+
+So our equation is 2^n=3 and we need to find the value of n and we need to find a number that is equal to or greater than 3.
+2^2=4 which is greater than 3 so the number of borrowed network bits will be 2. 
+
+Given the base network address, we can see that it is a Class C address. The subnet mask for a Class C IP address is 255.255.255.0 which in binary is 11111111.11111111.11111111.00000000
+
+After borrowing 2 network bits to satisfy the need for 3 subnets, our new binary address is 11111111.11111111.11111111.11000000 which in decimal is 255.255.255.192 or a /26 in slash notation. 
+
+Now we find the block size. We can see that when an subnet mask ends with 192, the block size is 64. Making our block size 64. 
+
+Now lets allocate IPs to each department:
+
+-The 1st Subnet will have a Network ID of: 192.168.1.0
+
+-The 2nd Subnet will have a Network ID of: 192.168.1 64
+
+-The 3rd Subnet will have a Network ID of: 192.168.1.128
+
+Next we need to find the Broadcast ID. The Broadcast IP will be the last IP before moving onto the next subnet.
+
+-1st Subnet Broadcast ID: 192.168.1.63
+
+-2nd Subnet Broadcast ID: 192.168.1.127
+
+-3rd Subnet Broadcast ID: 192.168.1.191
+
+Lastly, lets from the range of avaliable Host IDs. Which are the IPs that will be given to the host devices. These IPs are between the network ID and broadcast ID.
+
+-1st Subnet Host Range: 192.168.1.1 - 192.168.1.62
+
+-2nd Subnet Host Range: 192.168.1.65 - 192.168.1.126
+
+-3rd Subnet Host Range: 192.168.1.129 - 192.168.1.190
+
+
+
+Now that we finished subnetting, we can begin configuring the devices. 
 </p>
 <br />
+
+<h2>Device Configuration</h2>
 
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
