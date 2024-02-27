@@ -191,10 +191,29 @@ VLAN 30
 <h3>Configuring DHCP</h3>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="500" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/3c5158eb-44f3-491f-a8b6-a9a0419cbb12">
+
+<img width="500" alt="image" src="https://github.com/PradoJuanPablo/networking/assets/160810181/d9141d84-bba3-461f-b2e4-ee42220edb90">
+
+
 </p>
 <p>
 Now the devices connected to the network must be able to obtain IP addresses automatically, to do that we must configure Dynamic Host Configuration Protocol(DHCP) which is repsonsible for automatic IP assignment. 
+
+To configure the DHCP server, we must enable DHCP service on the device, which for Cisco equipment comes enabled by default.
+
+- <b>service dhcp</b>: This command will enable DHCP services on the device
+- <b>ip dhcp pool Admin-Pool</b>: This command creates a pool that represents the Admin/It subnet. 
+- <b>network 192.168.1.0 255.255.255.192</b>: This command assigns a network address to the pool we created
+- <b>default-router 192.168.1.1</b>: This command assigns the default gateway. The IP used for the default gateway will be the IP address of the subinterface that we created and assigned to each VLAN (gig0/0.10)
+- <b>dns-server 192.168.1.1</b>: This command tells the Cisco device to use the DNS server located at 192.168.1.1 to resolve domain names to IP addresses.
+- <b>domain-name Admin.com</b>: This command will specify the domain name for the devices in the subnet.
+- <b>exit</b>:
+
+Now the devices in the subnet will be assigned IPs automatically
+
+Repeat these configs to the other two remaining subnets and include their respective subnet information. 
+  
 </p>
 <br />
 
